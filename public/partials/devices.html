@@ -1,0 +1,86 @@
+<div ng-controller="devicesCtrl">
+    <div>
+        <img src="img/devices-banner.jpg" class="banner">
+    </div>
+
+    <div class="container pageView">
+        <div class="container">
+            <h3 class="devicesHeader">Devices</h3>
+
+            <div class="devicesHeader" id="addDeviceBtn">
+                <button type="button" class="btn btn-invert" data-toggle="modal" data-target="#deviceModal" class="toModal">Add device</button>
+                <div id="deviceModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add a device</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div>
+                                    <input type="text" ng-model="devicedata.Name" placeholder="Name" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="devicedata.Brand" placeholder="Brand" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="devicedata.Type" placeholder="Type">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-invert" ng-click="addDevice()">Add</button>
+                                </div>
+                                <div>
+                                    {{ deviceMessage }}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div ng-repeat="result in results" class="col-md-4">
+
+                    <div>
+                        <img src="img/switch.svg" alt="switch" width="250" data-toggle="modal" data-target="#myModal{{result.id}}" class="toModal"
+                        />
+                        <div>
+                            <h4>{{result.Name}}</h4>
+                        </div>
+                    </div>
+
+                    <div id="myModal{{result.id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Device: {{result.Name}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p><b>Name:</b></p>
+                                    <p>{{result.Name}}</p>
+                                    <p><b>Brand</b></p>
+                                    <p>{{result.Brand}}</p>
+                                    <p><b>Type</b></p>
+                                    <p>{{result.Type}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-invert" ng-click="delete(result.id)" data-dismiss="modal">Delete device</button>
+                                    <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

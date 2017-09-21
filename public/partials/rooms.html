@@ -1,0 +1,86 @@
+<div ng-controller="roomsCtrl">
+    <div>
+        <img src="img/rooms-banner.jpg" class="banner">
+    </div>
+
+    <div class="container pageView">
+        <div class="container">
+            <h3 class="roomHeader">Rooms</h3>
+
+            <div class="roomHeader" id="addRoomBtn">
+                <button type="button" class="btn btn-invert" data-toggle="modal" data-target="#roomModal" class="toModal">Add room</button>
+                <div id="roomModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add a room</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <input type="text" ng-model="roomdata.Name" placeholder="Name" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="roomdata.Type" placeholder="Type" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="roomdata.Floor" placeholder="Floor">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-invert" ng-click="addRoom()">Add</button>
+                                </div>
+                                <div>
+                                    {{ roomMessage }}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div ng-repeat="result in results" class="col-md-4">
+
+                    <div>
+                        <img src="img/bedroom.svg" alt="bedroom" width="250" data-toggle="modal" data-target="#myModal{{result.id}}" class="toModal"
+                        />
+                        <div>
+                            <h4>{{result.Name}}</h4>
+                        </div>
+                    </div>
+
+                    <div id="myModal{{result.id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Room: {{result.Name}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p><b>Name:</b></p>
+                                    <p>{{result.Name}}</p>
+                                    <p><b>Type</b></p>
+                                    <p>{{result.Type}}</p>
+                                    <p><b>Floor</b></p>
+                                    <p>{{result.Floor}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-invert" ng-click="delete(result.id)" data-dismiss="modal">Delete room</button>
+                                    <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

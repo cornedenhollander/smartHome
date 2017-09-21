@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<body ng-controller="userCtrl">
+    <div>
+        <img src="img/register-banner.jpg" class="banner" />
+    </div>
+
+    <div class="container pageView">
+        <h3>Register</h3>
+        <br>
+        <form class="login-form">
+            <form class="register-form" ng-submit="updateUser">
+                <input type="text" ng-model="register.username" placeholder="Username*" required="required">
+                <input type="password" ng-model="register.password" placeholder="Password*" required="required">
+                <input ng-if="succesfull_password == null || succesfull_password == true" type="password" ng-model="register.re_password"
+                    placeholder="Repeat password*" required="required">
+                <input ng-if="succesfull_password == false" class="red_border" type="password" ng-model="register.re_password" placeholder="Herhaal password*"
+                    required="required">
+                <input type="email" ng-model="register.email" placeholder="E-mail*" required="required">
+                <input type="text" ng-model="register.name" placeholder="Name">
+                <input type="text" ng-model="register.surname" placeholder="Surname">
+                <button type="submit" ng-click="save()" class="btn btn-invert">Register</button>
+            </form>
+
+            <div>
+                <p>
+                    <span ng-if="succesfull_password == true">{{register_text}}</span>
+                    <span ng-if="succesfull_password == false" class="red">{{register_errortext}}</span>
+                </p>
+            </div>
+            <div>
+                <p>Allready have an account? <a href="#!/login">Log in</a></p>
+            </div>
+
+            <p>{{ loginMessage }}</p>
+        </form>
+    </div>
+</body>
+
+</html>

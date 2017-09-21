@@ -1,0 +1,133 @@
+.navbar-nav {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.menu-item-top {
+    cursor: pointer;
+}
+
+.menu-item-bottom {
+    cursor: pointer;
+    padding-right: 250px;
+    padding-left: 250px;
+}
+
+.menu-bottom {
+    align-content: center;
+}
+
+body {
+    margin-top: 50px;
+}
+
+.logo {
+    padding: 10%;
+    margin-left: 50%;
+}
+
+.navbar {
+    opacity: 0.9;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.banner {
+    max-width: 100%;
+}
+
+.thumbnail {
+    margin-left: 25px;
+}
+
+.red{
+    color: red;
+}
+  
+.red_border{
+    border: solid 1px red;
+    color: red;
+}
+  
+.red_border::-webkit-input-placeholder, .red_border::-moz-placeholder, .red_border:-ms-input-placeholder, .red_border:-moz-placeholder   {
+    color: red;
+}
+  
+input {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.pageView {
+    margin-top: 50px;
+}
+
+.view {
+    margin-bottom: 100px;
+}
+
+#container1{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#container2{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding-right: 20px;
+}
+
+.room {
+    display: inline;
+}
+
+.rooms {
+    max-width: 250px;
+    margin: auto;
+}
+
+.toModal {
+    cursor: pointer;
+}
+
+.modal {
+    top: 40%;
+}
+
+.roomHeader{
+    display: inline;
+}
+
+#addRoomBtn {
+    float: right;
+}
+
+.devicesHeader{
+    display: inline;
+}
+
+#addDeviceBtn {
+    float: right;
+}
+
+.recipesHeader{
+    display: inline;
+}
+
+#addRecipeBtn {
+    float: right;
+}
+
+.error {
+    overflow: hidden;
+}

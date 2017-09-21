@@ -1,0 +1,30 @@
+<div ng-controller="loginCtrl">
+    <div>
+        <img src="img/login-banner.jpg" class="banner" />
+    </div>
+
+    <div class="container pageView">
+
+        <div class="container">
+            <h3>Login</h3>
+            <br>
+            <form class="login-form">
+                <div>
+                    <input type="text" ng-model="logindata.username" placeholder="Username" required="required">
+                </div>
+                <div>
+                    <input type="password" ng-model="logindata.password" placeholder="Password" required="required">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-invert" ng-click="login()">Login</button>
+                </div>
+            </form>
+            <div>
+                <p>Nog geen account? <a href="#!/user">Registreer</a></p>
+            </div>
+
+            <p><i>{{ loginMessage }}</i></p>
+
+        </div>
+    </div>
+</div>

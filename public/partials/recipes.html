@@ -1,0 +1,84 @@
+<div ng-controller="recipesCtrl">
+    <div>
+        <img src="img/recipes-banner.jpg" class="banner">
+    </div>
+
+    <div class="container pageView">
+        <div class="container">
+            <h3 class="recipesHeader">Recipes</h3>
+
+            <div class="recipesHeader" id="addRecipeBtn">
+                <button type="button" class="btn btn-invert" data-toggle="modal" data-target="#deviceModal" class="toModal">Add recipe</button>
+                <div id="deviceModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add a recipe</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div>
+                                    <input type="text" ng-model="recipedata.Name" placeholder="Name" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="recipedata.if_this" placeholder="If this" required="required">
+                                </div>
+                                <div>
+                                    <input type="text" ng-model="recipedata.then_that" placeholder="Then that" required="required">
+                                </div>
+                                <div>
+                                    <button type="submit" ng-click="addRecipe()" class="btn btn-invert">Add recipe</button>
+                                </div>
+                                <div>
+                                    {{ recipeMessage }}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div ng-repeat="result in results" class="col-md-4">
+
+                <div>
+                    <img src="img/plug.svg" alt="switch" width="250" data-toggle="modal" data-target="#myModal{{result.id}}" class="toModal"
+                    />
+                    <div>
+                        <h4>{{result.Name}}</h4>
+                    </div>
+                </div>
+
+                <div id="myModal{{result.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Device: {{result.Name}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><b>Name:</b></p>
+                                <p>{{result.Name}}</p>
+                                <p><b>If this:</b></p>
+                                <p>{{result.if_this}}</p>
+                                <p><b>Then that:</b></p>
+                                <p>{{result.then_that}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-invert" data-dismiss="modal" ng-click="delete(result.id)">Delete device</button>
+                                <button type="button" class="btn btn-invert" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
