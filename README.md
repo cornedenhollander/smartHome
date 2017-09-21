@@ -17,5 +17,6 @@ Bootstrap
 jQuery
 
 ## ADMINS ##
-Nathan (nathanrose13@gmail.com)
 Corné (cornedenhollander@gmail.com)
+&
+Nathan (nathanrose13@gmail.com)
